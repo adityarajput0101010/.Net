@@ -1,28 +1,13 @@
 ﻿using System;
 
-class Report
-{
-    public string GetData()
-    {
-        return "Monthly Sales Report";
-    }
-}
-
-class Printer
-{
-    public void Print(string data)
-    {
-        Console.WriteLine(data);
-    }
-}
+delegate int MyDelegate(int a, int b);
 
 class Program
 {
     static void Main()
     {
-        Report r = new Report();
-        Printer p = new Printer();
+        MyDelegate add = (x, y) => x + y;
 
-        p.Print(r.GetData());
+        Console.WriteLine("Addition = " + add(10, 20));
     }
 }
