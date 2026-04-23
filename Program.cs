@@ -1,17 +1,18 @@
 ﻿using System;
 
-class Student
+class Report
 {
-    private string name;
-
-    public void SetName(string n)
+    public string GetData()
     {
-        name = n;
+        return "Monthly Sales Report";
     }
+}
 
-    public void ShowName()
+class Printer
+{
+    public void Print(string data)
     {
-        Console.WriteLine("Student Name: " + name);
+        Console.WriteLine(data);
     }
 }
 
@@ -19,9 +20,9 @@ class Program
 {
     static void Main()
     {
-        Student s = new Student();
+        Report r = new Report();
+        Printer p = new Printer();
 
-        s.SetName("Shishir");
-        s.ShowName();
+        p.Print(r.GetData());
     }
 }
