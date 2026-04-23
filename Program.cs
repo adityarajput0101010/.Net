@@ -1,13 +1,20 @@
 ﻿using System;
-
-delegate int MyDelegate(int a, int b);
+using System.Threading.Tasks;
 
 class Program
 {
-    static void Main()
+    static async Task Main()
     {
-        MyDelegate add = (x, y) => x + y;
+        Console.WriteLine("Task Started");
 
-        Console.WriteLine("Addition = " + add(10, 20));
+        await Work();
+
+        Console.WriteLine("Task Completed");
+    }
+
+    static async Task Work()
+    {
+        await Task.Delay(3000);
+        Console.WriteLine("Working...");
     }
 }
