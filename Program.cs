@@ -1,18 +1,27 @@
 ﻿using System;
 
+class Student
+{
+    private string name;
+
+    public void SetName(string n)
+    {
+        name = n;
+    }
+
+    public void ShowName()
+    {
+        Console.WriteLine("Student Name: " + name);
+    }
+}
+
 class Program
 {
     static void Main()
     {
-        int a = 20;
-        int b = 10;
+        Student s = new Student();
 
-        Console.WriteLine("First Number: " + a);
-        Console.WriteLine("Second Number: " + b);
-
-        Console.WriteLine("Addition = " + (a + b));
-        Console.WriteLine("Subtraction = " + (a - b));
-        Console.WriteLine("Multiplication = " + (a * b));
-        Console.WriteLine("Division = " + (a / b));
+        s.SetName("Shishir");
+        s.ShowName();
     }
 }
